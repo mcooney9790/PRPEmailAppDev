@@ -1,0 +1,27 @@
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+
+
+    <meta charset="UTF-8">
+    <!--CSS Style Sheet links-->
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+    <!--Javascript links-->
+    <script src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+    <script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+    <title></title>
+</head>
+<body>
+    <button class="switchpage" id="1">Manage Template</button>
+    <button class="switchpage" id="2">Manage Files</button>
+    <button class="switchpage" id="3">Send Blast</button>
+    <div id="main" >
+{{ confirm }}
+</div>
+</body>
+</html>

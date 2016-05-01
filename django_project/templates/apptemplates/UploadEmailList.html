@@ -1,0 +1,32 @@
+<br>
+<br>
+<br>
+<div id="upload-list-box" >
+    <form  action="/upload-list-file/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <p>{{ email_list_form.non_field_errors }}</p>
+        <p>{{ email_list_form.docfile.label_tag }} </p>
+        <p>
+            {{ email_list_form.docfile.errors }}
+            {{ email_list_form.docfile }}
+        </p>
+        <input type="submit" value="Upload" />
+    </form>
+
+</div>
+
+<div id="upload-attachment-box">
+    <form  action="/upload-attachment/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <p>{{ attachment_form.non_field_errors }}</p>
+        <p>{{ attachment_form.docfile.label_tag }} </p>
+        <p>
+            {{ attachment_form.docfile.errors }}
+            {{ attachment_form.docfile }}
+        </p>
+        <input type="submit" value="Upload" />
+    </form>
+
+</div>

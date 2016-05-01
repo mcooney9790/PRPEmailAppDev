@@ -1,0 +1,77 @@
+{% load staticfiles %}
+
+<!-- Prep an Email Blast and Send it to DOM for execution -->
+<br>
+<br>
+<br>
+<div id="Email-Blast">
+
+    <input type="button" id="send-blast" onclick="sendBlast()" value="send blast">
+
+    <p><h4>Email List File:</h4><div id="chosen-list"></div></p>
+    <p><h4>Template:</h4><div id="chosen-template"></div></p>
+    <div id="test-list"></div>
+    <div id="test-temp"></div>
+
+</div>
+
+
+<div style="float: left; width: 500px;">
+    <div id="choose-template-previewer">
+        <h3>Choose an Email Template</h3>
+
+            <!-- List Templates stored -->
+            {% for template in email_templates %}
+
+            <input type="button" onclick="showTemp(this.value)" class = "select-template" value="{{ template }}">
+
+            {% endfor %}
+    </div>
+
+    <h4>Subject</h4>
+
+    <div id="showsubject" style="background-color:beige; color:darkblue;"></div>
+
+    <h4>Body</h4>
+
+    <div id="showbody" style="background-color:beige; color: darkblue;"></div>
+
+</div>
+<div style="float:left; width: 350px; height:500px">
+    <h3>Choose Your Contact List</h3>
+
+
+    <p>
+        {% for email_list in email_lists %}
+
+            <input type="button" onclick="emailListOnChange(this.value)" value="{{ email_list }}">
+
+        {% endfor %}
+    </p>
+
+    <div id="show-list-preview">
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div style="float:left; width: 350px; height:500px">
+    <h3>Add Attachments</h3>
+        <p>
+            {% for attachment in attachments %}
+
+                <input class="add-attachment" onclick="addAttachment(this.value)" type="button" value="{{ attachment}}">
+
+            {% endfor %}
+        </p>
+       <div id="attachments">
+
+            <ul id="attachment-list"></ul>
+        </div>
+    </div>
+
+
+
+
+</div>

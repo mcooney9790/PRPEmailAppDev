@@ -1,0 +1,23 @@
+/*
+=================
+Main skeleton style
+=================
+*/
+
+#main{
+    width: 1000px;
+}
+
+/*
+=================
+Import Files module style
+=================
+*/
+
+#upload-attachment-box,#upload-list-box {
+
+    float:left;
+    width:400px;
+    height:800px;
+
+}

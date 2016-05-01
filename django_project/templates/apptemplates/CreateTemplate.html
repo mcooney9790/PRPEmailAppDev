@@ -1,0 +1,19 @@
+{% load staticfiles %}
+{% load wysiwyg %}
+{% wysiwyg_setup %}
+<br>
+<br>
+<br>
+<div id="form-submitted-alert"></div>
+    <form action="/create-new-template/" id="submit-template" method="post">
+
+        {% csrf_token %}
+        {{ form.media }}
+        <p><b>Name:</b> {{ form.name }}</p>
+        <p><b>Subject:</b>{{ form.subject }}</p>
+        <p><b>Body:</b>{{ form.body }}</p>
+
+    <input type="submit" value="Submit form">
+</form>
+
+
