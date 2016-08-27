@@ -37,23 +37,24 @@ def replace_html(brand, name ,html):
 def attach_files(basepath,msg,files=[]):
 
     for f in files or []:
+
         path = os.path.join(basepath,f)
         with open(path,'rb') as fil:
-            msg.attach(MIMEApplication(
-                fil.read(),
-                Content_Disposition='attachment; filename="{}"' .format(os.path.basename(f)),
-                Name=os.path.basename(f)
-            ))
+            part = MIMEApplication(fil.read())
+            header_str_1 = 'attachment; filename="{}"' .format(os.path.basename(f))
+	    part.add_header('Content-Disposition',header_str_1)
+            msg.attach(part)
 
     return msg
 
-def build_message(toaddress,fromaddress,subject,body):
+def build_message(toaddress,fromaddress,subject,body,signature):
 
     msg = MIMEMultipart('alternative')
     msg['To'] = toaddress
     msg['From'] = fromaddress
     msg['Subject'] = subject
-    b = u"{}" .format(body)
+    body_final = body + signature
+    b = u"{}" .format(body_final)
     content = MIMEText(b.encode('utf-8') ,'html','UTF-8')
 
     msg.attach(content)

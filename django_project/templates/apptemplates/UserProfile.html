@@ -1,0 +1,18 @@
+<ul >
+    {% for user, pword, signature in finallist %}
+    
+    <li><h4>{{ user }}</h4></li>
+    <li><p style="-webkit-text-security:circle;">{{ pword }}</p></li>
+    <li>{{ signature }}</li>
+    
+    {% endfor %}
+    
+</ul>
+<div></div>
+    <form action="/new-prof/" id="submit-template" method="post">
+
+        {% csrf_token %}
+        {{ form }}
+
+    <a href="/admin/userprofile/profile/">Change Credentials</a>
+</form>

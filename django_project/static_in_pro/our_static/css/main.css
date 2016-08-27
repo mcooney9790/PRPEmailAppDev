@@ -21,3 +21,18 @@ Import Files module style
     height:800px;
 
 }
+
+nav ul {
+    height:200px;
+    width:300px;
+}
+nav ul{
+    overflow:hidden;
+    overflow-y:scroll;
+    overflow-x:scroll;
+}
+
+ul{
+    list-style-type: none;
+
+}

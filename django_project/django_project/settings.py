@@ -29,12 +29,15 @@ AWS_QUERYSTRING_AUTH = False
 SECRET_KEY = '8UxtxzAKsaNCLnw9Xe5NXTEqhWmk5P5LmcTMqo6pisS7IYob4B'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
 ALLOWED_HOSTS = [
+    '104.236.121.15',
+    '.104.236.121.15.'
 ]
+
 
 # Application definition
 
@@ -49,6 +52,7 @@ INSTALLED_APPS = (
     'sendmail',
     'templatecreator',
     'emaillistcreator',
+    'userprofile',
     'storages',
     'django_wysiwyg',
     'ckeditor',
